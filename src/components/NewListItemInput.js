@@ -3,10 +3,10 @@ import { HiPlusCircle } from "react-icons/hi";
 
 
 
-function NewItemInput({ listItems, itemInput, setItemInput,setAndSaveStates, handleFilter }) {
+function NewItemInput({ listItems, itemInput, setItemInput,setAndSaveStates, handleFilter,listItemsNew }) {
 
     function handleSubmit(submit) {
-        submit.preventDefault(); handleNewObj(listItems); setItemInput('');
+        submit.preventDefault(); handleNewObj(listItems);setItemInput('');
     }
 
     function handleNewObj(listItems) {
@@ -14,6 +14,7 @@ function NewItemInput({ listItems, itemInput, setItemInput,setAndSaveStates, han
         const newItemObject = { id: id, item: itemInput, checked: false }
         const myList = [...listItems, newItemObject]
         setAndSaveStates(myList)
+        
     }
 
     return (
@@ -23,12 +24,11 @@ function NewItemInput({ listItems, itemInput, setItemInput,setAndSaveStates, han
             <input
                 autoFocus
                 required
-
                 type='text'
                 className='newItemInput'
                 placeholder='Add Something or Search'
                 value={itemInput}
-                onChange={(input) =>{ setItemInput(input.target.value);handleFilter(listItems) }}
+                onChange={(input) =>{ setItemInput(input.target.value);listItemsNew(listItems);}}
 
             />
             <button

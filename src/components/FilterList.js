@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function FilterList() {
+function FilterList({filterRef,handleFilter,listItems}) {
   //  const [listFilter, listFilterSet] = useState(listItems.filter((a)=> a.item.includes(itemInput)))
   function handleFilters() {
     /*ort alphabetic ilter   
@@ -32,10 +32,10 @@ function FilterList() {
       <label htmlFor="filterList">Filter by </label>
       <select
         id="filterList"
-        // ref={filterRef}
+        ref={filterRef}
         value={filterValue}
         onChange={(e) => {
-          NewFilterValue(e.target.value);
+          NewFilterValue(e.target.value);handleFilter(listItems);
         }}
       >
         <option>All Items</option>

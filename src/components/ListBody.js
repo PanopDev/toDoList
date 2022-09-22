@@ -1,24 +1,7 @@
-import ListItem from "./ListItem";
+
 import { FiDelete } from "react-icons/fi"
 
-function ListBody({ listItems, listItemsNew, itemInput }) {
-
-
-
-  function handleChecked(id) {
-    const myList = listItems.map((li) => id == li.id ? { ...li, checked: !li.checked } : li)
-    listItemsNew(myList)
-    localStorage.setItem('listItems', JSON.stringify(myList))
-  }
-  function handleDelete(id) {
-    const myList = listItems.filter((item) => item.id !== id)
-    listItemsNew(myList)
-    localStorage.setItem('listItems', JSON.stringify(myList))
-
-
-
-  }
-  let listFilter = listItems.filter((a) => a.item.includes(itemInput));
+function ListBody({ listItems, listFilter,handleChecked,handleDelete }) {
 
   return (
     <div>

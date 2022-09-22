@@ -10,3 +10,27 @@ width:48px;
 height:48px;
 }
 
+.transparentButton{
+background-color:transparent;
+border:0px;
+
+}
+.deleteLogo{
+width:40px;
+height:30px;
+margin-top:10px
+}
+
+.newItemInput{
+width:80%;}
+
+.listItemLabel{
+
+font-size:2rem;
+}
+.noItemsText{
+display:flex;
+justify-content: center;
+text-align:center;
+font-size:1.5rem;
+}

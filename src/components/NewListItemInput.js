@@ -1,11 +1,9 @@
-import {useState} from 'react'
-import {HiPlusCircle} from "react-icons/hi";
+
+import { HiPlusCircle } from "react-icons/hi";
 
 
 
-function NewItemInput({ listItems, listItemsNew }) {
-    
-    const [itemInput, setItemInput] = useState('')
+function NewItemInput({ listItems, listItemsNew, itemInput, setItemInput }) {
 
     function handleSubmit(submit) {
         submit.preventDefault(); handleNewObj(listItems); setItemInput('');
@@ -14,40 +12,33 @@ function NewItemInput({ listItems, listItemsNew }) {
     function handleNewObj(listItems) {
         const id = listItems.length ? listItems[listItems.length - 1].id + 1 : 1
         const newItemObject = { id: id, item: itemInput, checked: false }
-        const myItems = [...listItems, newItemObject]
-        listItemsNew(myItems)
+        const myList = [...listItems, newItemObject]
+        listItemsNew(myList)
+        localStorage.setItem('listItems', JSON.stringify(myList))
     }
 
+    return (
+        <form
+            onSubmit={handleSubmit}
+        >
+            <input
+                autoFocus
+                required
 
-return(
-    <form
-    onSubmit={handleSubmit}
-    >
-        <input 
-        autoFocus
-        required
-        type = 'text'
-        className= 'newItemInput'
-        placeholder= 'Add Something here'
-        value={itemInput}
-        onChange={(input)=>{setItemInput(input.target.value)}}
-        
+                type='text'
+                className='newItemInput'
+                placeholder='Add Something or Search'
+                value={itemInput}
+                onChange={(input) => { setItemInput(input.target.value) }}
 
-        />
-        <button
-        type='submit'
-        className= 'addItemButton'
-        ><HiPlusCircle 
-        className='addItemLogo'
-        /></button>
-    </form>
-
-    
-    
+            />
+            <button
+                type='submit'
+                className='transparentButton'
+            ><HiPlusCircle
+                    className='addItemLogo'
+                /></button>
+        </form>
     )
-
-
-
 }
-
 export default NewItemInput

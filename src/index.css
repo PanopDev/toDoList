@@ -35,5 +35,7 @@ background-color:rgb(113, 113, 113);
 }
 
 li {
+    display:flex;
+    align-items:center;
 list-style-type:none;
 }

@@ -1,17 +1,17 @@
 
 
-function ListItem(listItems,listItemsNew){
+function ListItem(listItems) {
 
-return (
+    return (
 
-    
-    <li>
-   
-<input type="checkbox"></input>
-<label>{listItems}</label>
 
-    </li>
-  
+        <li>
+
+            <input type="checkbox"></input>
+            <label>{listItems}</label>
+
+        </li>
+
     )
 
 }

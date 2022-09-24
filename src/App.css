@@ -34,3 +34,12 @@ justify-content: center;
 text-align:center;
 font-size:1.5rem;
 }
+.settings{
+display:flex;
+justify-content: center;
+margin: 5px;
+}
+
+#selectAllCheckBox{
+font-size:1.2rem;
+}

@@ -1,8 +1,6 @@
 import { useState } from "react";
 
-function FilterList({filterRef,handleFilter,listItems,listItemsNew,initialListItemsState,initItemsTest}) {
-
-
+function FilterList({ filterRef, handleFilter, listItems }) {
   const [filterValue, NewFilterValue] = useState("All Items");
 
   return (
@@ -13,7 +11,8 @@ function FilterList({filterRef,handleFilter,listItems,listItemsNew,initialListIt
         ref={filterRef}
         value={filterValue}
         onChange={(e) => {
-          NewFilterValue(e.target.value);handleFilter(listItems);console.log('filterListJs');
+          NewFilterValue(e.target.value);
+          handleFilter(listItems);
         }}
       >
         <option>All Items</option>

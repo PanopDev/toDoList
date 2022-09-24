@@ -1,0 +1,3 @@
+adding something to the list doesnt work properly with sort
+
+Id is not working correctly when adding to the list to something not sorted in original order

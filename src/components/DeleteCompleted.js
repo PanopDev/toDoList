@@ -1,13 +1,10 @@
-export default function DeleteCompleted({deleteAll}) {
-
-
-
+export default function DeleteCompleted({buttonText,buttonFunction}) {
 
   return (
     
       <button
-      onClick ={()=>{deleteAll()}}
-      >Delete All Completed</button>
+      onClick ={()=>{{buttonFunction()}}}
+      >{buttonText}</button>
     
   )
 }

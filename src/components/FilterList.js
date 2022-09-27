@@ -8,6 +8,7 @@ function FilterList({ filterRef, handleFilter, listItems }) {
       <label htmlFor="filterList">Filter by </label>
       <select
         id="filterList"
+        className="filterSortDropdown"
         ref={filterRef}
         value={filterValue}
         onChange={(e) => {

@@ -6,6 +6,7 @@ function SortList({ sortSelect, sortSelected, handleSort, sortRef }) {
       <label htmlFor="sortList"> Sort by </label>
       <select
         id="sortList"
+        className="filterSortDropdown"
         name="sortList"
         ref={sortRef}
         value={sortSelect}

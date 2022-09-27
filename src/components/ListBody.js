@@ -4,10 +4,11 @@ function ListBody({ listItems, listFilter, handleChecked, handleDelete }) {
   return (
     <div>
       <ul>
+        
         {listItems.length ? (
           listFilter.map((li) => (
-            <li key={li.id}>
-              <input type="checkbox" checked={li.checked} onChange={() => handleChecked(li.id)} />
+            <li key={li.id} className='listItems'>
+              <input type="checkbox" className="checkbox" checked={li.checked} onChange={() => handleChecked(li.id)} />
               <label
                 style={li.checked ? { textDecoration: "line-through" } : null}
                 onDoubleClick={() => handleChecked(li.id)}

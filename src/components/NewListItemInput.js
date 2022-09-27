@@ -8,10 +8,12 @@ function NewItemInput({
   handleSort,
   listItemsNew,
   sortSelected,
+  selectAllBoxRef
 }) {
   function handleSubmit(submit) {
     submit.preventDefault();
     handleNewObj(listItems);
+    selectAllBoxRef.current.checked = false
     setItemInput("");
   }
 
@@ -35,6 +37,7 @@ function NewItemInput({
         onChange={(input) => {
           setItemInput(input.target.value);
           listItemsNew(listItems);
+        //   selectAllBoxRef.current.checked = false
         }}
       />
       <button type="submit" className="transparentButton">

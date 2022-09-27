@@ -2,7 +2,7 @@ export default function DeleteCompleted({buttonText,buttonFunction}) {
 
   return (
     
-      <button
+      <button className="deleteAllButtons"
       onClick ={()=>{{buttonFunction()}}}
       >{buttonText}</button>
     

@@ -7,8 +7,10 @@ import SortList from "./components/SortList.js";
 import FilterList from "./components/FilterList.js";
 import DeleteCompleted from "./components/DeleteCompleted";
 import SelectAll from "./components/SelectAll";
+import ItemsStats from "./components/ItemsStats";
 
 function App() {
+  
   const initialListItemsState = JSON.parse(localStorage.getItem("listItems")) || [];
   const [listItems, listItemsNew] = useState(initialListItemsState);
   const [itemInput, setItemInput] = useState("");
@@ -17,8 +19,12 @@ function App() {
   const filterRef = useRef();
   const sortRef = useRef();
   const selectAllBoxRef = useRef();
-  useEffect(() => handleFilter(listItems), [itemInput]);
-  useEffect(() => handleSort(), [sortSelect, listItems]);
+  let completed =  listItems.filter((item)=>item.checked == true)
+  let incomplete = listItems.filter((item)=>item.checked == false )
+  let totalItems = listItems.length
+  useEffect(()=> handleFilter(listItems), [itemInput]);
+  useEffect(()=> handleSort(), [sortSelect, listItems]);
+  useEffect(()=> handleStats(), [listItems]);
 
   // ^^added  this list items to this recently if there is a bug
   //~~~~~~~~~~~~~~~Testing logs for debugging
@@ -124,6 +130,12 @@ function App() {
     setAndSaveStates(myList);
   }
 
+  function handleStats(){
+    completed = listItems.filter((item)=>item.checked == true)
+    incomplete = listItems.filter((item)=>item.checked == false )
+    totalItems = listItems.length
+  }
+
   //   // Initial function calls
   // handleSort()
 
@@ -140,21 +152,36 @@ function App() {
         listItemsNew={listItemsNew}
         handleSort={handleSort}
         sortSelected={sortSelected}
+        selectAllBoxRef={selectAllBoxRef}
       />
+      <div className="settingsAndItems">
       <div className="settings">
-        <FilterList listItems={listItems} filterRef={filterRef} handleFilter={handleFilter} />
-        <SortList sortRef={sortRef} sortSelect={sortSelect} sortSelected={sortSelected} handleSort={handleSort} />
-        <DeleteCompleted deleteAll={deleteAll} buttonText={"Delete All Checked"} buttonFunction={deleteAll} />
-        <DeleteCompleted deleteAll={deleteAll} buttonText={"Undo"} buttonFunction={undoDeleteAll} />
+        <div className='filterAndSortDiv'>
+          <FilterList listItems={listItems} filterRef={filterRef} handleFilter={handleFilter} />
+          <SortList sortRef={sortRef} sortSelect={sortSelect} sortSelected={sortSelected} handleSort={handleSort} />
+        </div>
+
+        <div className='filterAndSortDiv'>
+          <DeleteCompleted deleteAll={deleteAll} buttonText={"Delete All Checked"} buttonFunction={deleteAll} />
+          <DeleteCompleted deleteAll={deleteAll} buttonText={"Undo"} buttonFunction={undoDeleteAll} />
+        </div>
       </div>
-      <SelectAll selectAll={selectAll} selectAllBoxRef={selectAllBoxRef} />
+  
+      <div className='listItems'>
+      <SelectAll selectAll={selectAll} selectAllBoxRef={selectAllBoxRef} 
+        completed = {completed}
+        incomplete = {incomplete}
+        totalItems= {totalItems}
+      />
+
       <ListBody
         listItems={listItems}
         listFilter={listFilter}
         handleChecked={handleChecked}
         handleDelete={handleDelete}
       />
-      <br />
+      </div>
+      </div>
     </div>
   );
 }

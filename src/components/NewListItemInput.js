@@ -8,7 +8,9 @@ function NewItemInput({
   handleSort,
   listItemsNew,
   sortSelected,
-  selectAllBoxRef
+  selectAllBoxRef,
+  selectAllLIRef,
+  hideShowSelectAll
 }) {
   function handleSubmit(submit) {
     submit.preventDefault();
@@ -23,7 +25,10 @@ function NewItemInput({
     const newItemObject = { id: id, item: itemInput, checked: false };
     const myList = [...listItems, newItemObject];
     setAndSaveStates(myList);
+
   }
+
+
 
   return (
     <form onSubmit={handleSubmit}>
@@ -37,7 +42,8 @@ function NewItemInput({
         onChange={(input) => {
           setItemInput(input.target.value);
           listItemsNew(listItems);
-        //   selectAllBoxRef.current.checked = false
+          // hideShowSelectAll();
+
         }}
       />
       <button type="submit" className="transparentButton">
@@ -47,3 +53,4 @@ function NewItemInput({
   );
 }
 export default NewItemInput;
+

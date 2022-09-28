@@ -1,154 +1,164 @@
-.App{
-    border:3px solid rgb(0, 0, 0);
-    min-width:95vw;
+.App {
+    border: 3px solid rgb(0, 0, 0);
+    min-width: 95vw;
     min-height: 95vh;
-    color:white;
-    }
-
-.addItemLogo{
-width:48px;
-height:48px;
+    color: white;
 }
 
-.transparentButton{
-background-color:transparent;
-border:0px;
-padding:0px;
-margin-left: -3px;
-display: inline-block;
-vertical-align: bottom;
-
-
+.addItemLogo {
+    width: 35px;
+    height: 35px;
 }
-.deleteLogo{
-width:40px;
-height:30px;
+
+.transparentButton {
+    background-color: transparent;
+    border: 0px;
+    padding: 0px;
+    margin-left: -3px;
+    display: inline-block;
+    vertical-align: bottom;
 
 
 }
 
-.newItemInput{
-width:85%;
-background-image:radial-gradient(rgb(214, 211, 211),rgb(204, 204, 204));
-border-radius:10px;
-padding:6px;
-margin:5px;
-margin-right:0px;
-color:rgb(0, 0, 0);
-font-weight:bold;
-}
-
-
-.listItemLabel{
-
-font-size:1.3rem;
-margin:0px;
-padding:5px;
-display:inline-block;
-vertical-align:bottom
+.deleteLogo {
+    width: 40px;
+    height: 30px;
 
 
 }
-.noItemsText{
-display:flex;
-justify-content: center;
-text-align:center;
-font-size:1.3rem;
+
+.newItemInput {
+    width: 85%;
+    background-image: radial-gradient(rgb(214, 211, 211), rgb(204, 204, 204));
+    border-radius: 10px;
+    padding: 6px;
+    margin: 5px;
+    margin-right: 0px;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
 }
-.settings{
-display:flex;
-flex-direction: column;
-justify-content: center;
-margin: 5px;
+
+
+.listItemLabel {
+
+    font-size: 1.3rem;
+    margin: 0px;
+    padding: 5px;
+    display: inline-block;
+    vertical-align: bottom
+}
+
+.noItemsText {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: 1.3rem;
+}
+
+.settings {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 5px;
 
 }
 
-#selectAllCheckBox{
-font-size:1.3rem;
+#selectAllCheckBox {
+    font-size: 1.3rem;
 }
 
-.listBody{
-width:50%
-}
-.listItems{
-background-color:rgb(159, 160, 161);
-border-style:solid;
-border-color:black;
-border-width:0px 0px 1px 0px;
-
-}
-.stats{
-display:flex;
-justify-content: center;
-font-size:1rem;
-color:rgb(193, 193, 193);
+.listBody {
+    width: 50%
 }
 
-.deleteAllButtons{
-border-radius:10px;
-margin:2px;
-color:rgb(0, 0, 0);
-font-size:1rem;
-background-image: radial-gradient(rgb(117, 115, 115),rgb(125, 123, 123),rgb(184, 183, 183));
+.listItems {
+    background-color: rgb(159, 160, 161);
+    border-style: solid;
+    border-color: black;
+    border-width: 0px 0px 1px 0px;
+
 }
-.filterSortDropdown{
-background-image:radial-gradient(rgb(152, 151, 151),white);
-border-radius:10px;
-padding:3px;
-font-size:1rem;
-margin-bottom: 5px;
+
+.stats {
+    display: flex;
+    justify-content: center;
+    font-size: 1rem;
+    color: rgb(193, 193, 193);
 }
-.checkbox{
-margin-bottom:11px;
+
+.deleteAllButtons {
+    border-radius: 10px;
+    margin: 2px;
+    color: rgb(0, 0, 0);
+    font-size: 1rem;
+    background-image: radial-gradient(rgb(117, 115, 115), rgb(125, 123, 123), rgb(184, 183, 183));
 }
-.filterAndSortDiv{
-display:flex;
-justify-content: center; 
-flex-direction:column;   
-    }
+
+.filterSortDropdown {
+    background-image: radial-gradient(rgb(152, 151, 151), white);
+    border-radius: 10px;
+    padding: 3px;
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+
+.checkbox {
+    margin-bottom: 11px;
+}
+
+.filterAndSortDiv {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
 
 @media screen and (min-width:1000px) {
-   /* .settings{
+
+    /* .settings{
 flex-direction:row;
 }
 .filterAndSortDiv{
 flex-direction:row;
 } */
-.listItems{
+    .listItems {
 
-width:100%}
-
-.settingsAndItems{
-    display:flex;
-    width:90%;
-    flex-direction:row-reverse;
+        width: 100%
     }
 
-.settings{
-width:40%;
-justify-content:flex-start;
-}
+    .settingsAndItems {
+        display: flex;
+        width: 90%;
+        flex-direction: row-reverse;
+    }
 
-ul{
-width:100%;
-}
-.settingsAndItems{
-display:flex;
-justify-content: flex-start;
+    .settings {
+        width: 40%;
+        justify-content: flex-start;
+    }
 
-}
-.App {
-   
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-.listItems{
-border-left:1px;
-border-right:1px;
-border: 1px solid black;
-}
+    ul {
+        width: 100%;
+    }
+
+    .settingsAndItems {
+        display: flex;
+        justify-content: flex-start;
 
     }
-    
+
+    .App {
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .listItems {
+        border-left: 1px;
+        border-right: 1px;
+        border: 1px solid black;
+    }
+
+}

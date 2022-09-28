@@ -29,14 +29,14 @@
 }
 
 .newItemInput {
-    width: 85%;
+    width: 87%;
     background-image: radial-gradient(rgb(214, 211, 211), rgb(204, 204, 204));
     border-radius: 10px;
     padding: 6px;
-    margin: 5px;
-    margin-right: 0px;
+    margin: 5px 0 5px 0px;
     color: rgb(0, 0, 0);
     font-weight: bold;
+    
 }
 
 
